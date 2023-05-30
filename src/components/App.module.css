@@ -1,0 +1,13 @@
+.container {
+  width: 400px;
+  background-color: rgba(248, 248, 5, 0.753);
+  margin-right: auto;
+  margin-left: auto;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.button_container {
+  display: flex;
+  justify-content: center;
+}

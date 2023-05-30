@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Statistics } from './Statistics';
-import { FeedbackOptions } from './FeedbackOptions';
+import { Statistics } from './Statistics/Statistics';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Notification } from './Notification';
-import { Section } from './Section';
+import { Section } from './Section/Section';
+import css from './App.module.css';
 
 export class App extends Component {
   state = {
@@ -33,12 +34,14 @@ export class App extends Component {
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
-      <div>
+      <div className={css.container}>
         <Section title="Please leave feedback">
-          <FeedbackOptions
-            options={objKey}
-            onLeaveFeedback={this.toAddFeedback}
-          ></FeedbackOptions>
+          <div className={css.button_container}>
+            <FeedbackOptions
+              options={objKey}
+              onLeaveFeedback={this.toAddFeedback}
+            ></FeedbackOptions>
+          </div>
         </Section>
         <Section title="Statistics">
           {!total ? (
